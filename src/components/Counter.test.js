@@ -7,13 +7,13 @@ import { createStore } from 'redux';
 
 import { Counter } from 'components';
 import { increaseCount } from 'actions';
-import { reducer } from 'reducers';
+import { counter } from 'reducers';
 
 configure({ adapter: new EnzymeAdapter() });
 
 /* eslint-disable no-undef */
 describe('<Counter /> unit test', () => {
-  const getWrapper = (mockStore = createStore(reducer, { count: 0 })) =>
+  const getWrapper = (mockStore = createStore(counter, { count: 0 })) =>
     mount(
       <Provider store={mockStore}>
         <Counter />
@@ -31,7 +31,7 @@ describe('<Counter /> unit test', () => {
   });
 
   it('should dispatch increase action on button click', () => {
-    const mockStore = createStore(reducer, { count: 0 });
+    const mockStore = createStore(counter, { count: 0 });
     mockStore.dispatch = jest.fn();
 
     const wrapper = getWrapper(mockStore);
