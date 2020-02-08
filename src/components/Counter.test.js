@@ -1,16 +1,17 @@
 import React from 'react';
-import Enzyme, { mount, shallow, configure } from 'enzyme';
+import { mount, configure } from 'enzyme';
 
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import { Counter } from 'components';
-import { increaseCount, decreaseCount } from 'actions';
+import { increaseCount } from 'actions';
 import { reducer } from 'reducers';
 
 configure({ adapter: new EnzymeAdapter() });
 
+/* eslint-disable no-undef */
 describe('<Counter /> unit test', () => {
   const getWrapper = (mockStore = createStore(reducer, { count: 0 })) =>
     mount(

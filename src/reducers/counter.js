@@ -4,7 +4,7 @@ const initialState = {
   count: 0
 };
 
-export const reducer = (state = initialState, action) => {
+export const counter = (state = initialState, action) => {
   switch (action.type) {
     case ActionEnums.INCREASE_COUNT_TYPE:
       return {
