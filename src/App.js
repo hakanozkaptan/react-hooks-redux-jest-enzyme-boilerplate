@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { store } from 'stores';
 
-import { Home, Contact } from 'pages';
+import { Home, Contact, NotFound } from 'pages';
 
 const App = () => {
   return (
@@ -18,6 +18,9 @@ const App = () => {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>
