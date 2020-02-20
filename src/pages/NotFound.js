@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Contact = () => (
+export const NotFound = () => (
   <>
-    <ContactPage>Welcome to my boilerplate</ContactPage>
+    <NotFoundPage>404 page not found :(</NotFoundPage>
     <LinkTo to='/'>Return to Home</LinkTo>
   </>
 );
 
-const ContactPage =  styled.div`
-  font-weight: bold; 
+const NotFoundPage =  styled.div`
+  font-style: italic; 
 `;
 
 const LinkTo = styled(Link)`
