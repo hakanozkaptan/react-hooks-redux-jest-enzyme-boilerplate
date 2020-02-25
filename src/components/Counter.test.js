@@ -10,8 +10,8 @@ import { increaseCount } from 'actions';
 import { counter } from 'reducers';
 
 configure({ adapter: new EnzymeAdapter() });
-
 /* eslint-disable no-undef */
+
 describe('<Counter /> unit test', () => {
   const getWrapper = (mockStore = createStore(counter, { count: 0 })) =>
     mount(
@@ -20,7 +20,7 @@ describe('<Counter /> unit test', () => {
       </Provider>
     );
 
-  it('should add to count and display the correct # of counts', () => {
+  test('should add to count and display the correct # of counts', () => {
     const wrapper = getWrapper();
     expect(wrapper.find('h3').text()).toEqual('Count: 0');
     wrapper
@@ -30,7 +30,7 @@ describe('<Counter /> unit test', () => {
     expect(wrapper.find('h3').text()).toEqual('Count: 1');
   });
 
-  it('should dispatch increase action on button click', () => {
+  test('should dispatch increase action on button click', () => {
     const mockStore = createStore(counter, { count: 0 });
     mockStore.dispatch = jest.fn();
 
@@ -42,7 +42,7 @@ describe('<Counter /> unit test', () => {
     expect(mockStore.dispatch).toHaveBeenCalledWith(increaseCount());
   });
 
-  it('should decrease to count and display the correct # of counts', () => {
+  test('should decrease to count and display the correct # of counts', () => {
     const wrapper = getWrapper();
     expect(wrapper.find('h3').text()).toEqual('Count: 0');
     wrapper
